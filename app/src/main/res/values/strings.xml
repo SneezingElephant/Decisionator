@@ -10,4 +10,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="flip_the_coin">Flip the coin!</string>
+    <string name="customize">Customize</string>
+    <string name="presets">Presets</string>
+    <string name="coinContentDescription">An image of the coin which will be flipped</string>
 </resources>
