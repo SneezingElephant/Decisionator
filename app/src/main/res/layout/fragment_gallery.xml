@@ -7,7 +7,7 @@
     tools:context=".ui.gallery.GalleryFragment">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/flipButton"
         android:layout_width="166dp"
         android:layout_height="49dp"
         android:text="@string/flip_the_coin"
@@ -20,11 +20,11 @@
         app:layout_constraintVertical_bias="0.849" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/coiniestCoin"
         android:layout_width="155dp"
         android:layout_height="156dp"
-        android:src="@android:drawable/ic_menu_compass"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:src="@drawable/coin_heads"
+        app:layout_constraintBottom_toTopOf="@+id/flipButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,17 +37,17 @@
         android:layout_height="wrap_content"
         android:text="@string/customize"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/flipButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/coiniestCoin" />
 
     <TextView
         android:id="@+id/presetText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/presets"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/coiniestCoin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,7 +57,7 @@
         android:id="@+id/presetDropdown"
         android:layout_width="218dp"
         android:layout_height="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/coiniestCoin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
