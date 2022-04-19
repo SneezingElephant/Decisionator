@@ -1,5 +1,10 @@
 package com.example.pmaminiprojekt.ui.gallery;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +27,12 @@ import java.util.Random;
 
 public class GalleryFragment extends Fragment {
 
+    private SensorManager sm;
+
+    private float acelVal;
+    private float acelLast;
+    private float shake;
+
     private static final Random RANDOM = new Random();
     private ImageView coin;
 
@@ -39,9 +50,12 @@ public class GalleryFragment extends Fragment {
         final TextView textView = binding.presetText;
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+        sm = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        sm.registerListener(sensorListener, sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
 
-
-
+        acelVal = SensorManager.GRAVITY_EARTH;
+        acelLast = SensorManager.GRAVITY_EARTH;
+        shake = 0.00f;
 
         return root;
     }
@@ -58,7 +72,29 @@ public class GalleryFragment extends Fragment {
         });
     }
 
+    private final SensorEventListener sensorListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent sensorEvent) {
 
+            float x = sensorEvent.values[0];
+            float y = sensorEvent.values[1];
+            float z = sensorEvent.values[2];
+
+            acelLast = acelVal;
+            acelVal = (float) Math.sqrt((double) (x*x + y*y + z*z));
+            float delta = acelVal - acelLast;
+            shake = shake * 0.9f + delta;
+
+            if (shake > 12) {
+                flipCoin();
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int i) {
+
+        }
+    };
 
     private void flipCoin(){
 
@@ -88,6 +124,12 @@ public class GalleryFragment extends Fragment {
             }
         });
         coin.startAnimation(fadeOut);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        sm.unregisterListener(sensorListener);
     }
 
     @Override

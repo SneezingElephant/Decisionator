@@ -3,11 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/content_main.xml" value="0.358695652173913" />
-        <entry key="..\:/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/fragment_gallery.xml" value="0.33" />
-        <entry key="..\:/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
-        <entry key="..\:/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/fragment_slideshow.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/rasmu/AndroidStudioProjects/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/fragment_gallery.xml" value="0.33" />
       </map>
     </option>
   </component>
