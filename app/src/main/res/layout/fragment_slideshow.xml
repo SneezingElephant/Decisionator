@@ -9,36 +9,39 @@
     tools:context=".ui.slideshow.SlideshowFragment">
 
     <TextView
+        android:id="@+id/wheelSpinnerTitle"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="Spin and Win Game"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="18sp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:fontFamily="sans-serif-condensed"/>
+        android:text="Wheel Spinner"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <RelativeLayout
+        android:id="@+id/wheelWithArrow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/spinwheel_takeaway"/>
-
-        <ImageView
             android:id="@+id/wheel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="195dp"
-            android:layout_marginEnd="195dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spinwheel_takeaway" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginEnd="180dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
             android:src="@drawable/spinwheel_arrow" />
@@ -49,12 +52,15 @@
         android:id="@+id/spinBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="126dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="108dp"
-        android:text="Spin!" />
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="100dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Spin The Wheel!"
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

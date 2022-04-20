@@ -14,4 +14,13 @@
     <string name="customize">Customize</string>
     <string name="presets">Presets</string>
     <string name="coinContentDescription">An image of the coin which will be flipped</string>
+
+    <string-array name="wheelPresets">
+        <item>Preset1</item>
+        <item>Preset2</item>
+        <item>Preset3</item>
+        <item>Preset4</item>
+        <item>Preset5</item>
+    </string-array>
+
 </resources>

@@ -7,8 +7,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +55,7 @@ public class SlideshowFragment extends Fragment {
         getDegreeForSectors();
 
         binding.spinBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View view) {
                 if (!isSpinning)
                 {
@@ -112,7 +115,5 @@ public class SlideshowFragment extends Fragment {
             sectorDegrees[i] = (i+1) * sectorDegree;
         }
     }
-
-
 
 }
