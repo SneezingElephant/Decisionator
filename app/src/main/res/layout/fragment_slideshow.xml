@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,19 +12,24 @@
         android:id="@+id/wheelSpinnerTitle"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="Wheel Spinner"
         android:textColor="@color/black"
         android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
         android:id="@+id/wheelWithArrow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageView
@@ -51,16 +56,69 @@
     <Button
         android:id="@+id/spinBtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="75sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="100dp"
         android:fontFamily="sans-serif-black"
         android:text="Spin The Wheel!"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheelWithArrow" />
+
+    <Button
+        android:id="@+id/takeawayPreset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wheelWithArrow"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif-black"
+        android:text="Takeaway"
+        app:layout_constraintBottom_toTopOf="@+id/wheelWithArrow"
+        app:layout_constraintEnd_toStartOf="@+id/activityPreset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheelSpinnerTitle" />
+
+    <Button
+        android:id="@+id/activityPreset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wheelWithArrow"
+        android:layout_toEndOf="@+id/takeawayPreset"
+        android:fontFamily="sans-serif-black"
+        android:text="Activity"
+        app:layout_constraintBottom_toTopOf="@+id/wheelWithArrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheelSpinnerTitle" />
+
+    <Button
+        android:id="@+id/giftIdeasPreset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wheelWithArrow"
+        android:layout_toEndOf="@+id/activityPreset"
+        android:fontFamily="sans-serif-black"
+        android:text="Gift Ideas"
+        app:layout_constraintBottom_toTopOf="@+id/wheelWithArrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activityPreset"
+        app:layout_constraintTop_toBottomOf="@+id/wheelSpinnerTitle" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/spinBtn"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif-black"
+        android:text="Customize"
+        app:layout_constraintBottom_toTopOf="@+id/spinBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wheelWithArrow" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

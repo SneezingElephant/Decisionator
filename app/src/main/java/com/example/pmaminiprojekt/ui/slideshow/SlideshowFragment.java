@@ -65,6 +65,13 @@ public class SlideshowFragment extends Fragment {
             }
         });
 
+        binding.takeawayPreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
     @Override
