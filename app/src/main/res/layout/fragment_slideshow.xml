@@ -43,6 +43,28 @@
             android:src="@drawable/spinwheel_takeaway" />
 
         <ImageView
+            android:id="@+id/wheelActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spinwheel_activity"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wheelGifts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spinwheel_gifts"
+            android:visibility="gone" />
+
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="180dp"
