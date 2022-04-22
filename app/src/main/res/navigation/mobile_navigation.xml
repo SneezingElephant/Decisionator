@@ -21,5 +21,14 @@
         android:id="@+id/nav_slideshow"
         android:name="com.example.pmaminiprojekt.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_customizeFragment"
+            app:destination="@id/customizeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customizeFragment"
+        android:name="com.example.pmaminiprojekt.ui.slideshow.CustomizeFragment"
+        android:label="fragment_customize"
+        tools:layout="@layout/fragment_customize" />
 </navigation>
