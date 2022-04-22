@@ -83,7 +83,7 @@ public class SlideshowFragment extends Fragment {
         binding.buttonCustomize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                openCustomizationFragment();
             }
         });
 
@@ -134,6 +134,10 @@ public class SlideshowFragment extends Fragment {
                 }
             }
         });
+    }
+
+    public void openCustomizationFragment() {
+
     }
 
     @Override

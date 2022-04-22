@@ -30,5 +30,9 @@
         android:id="@+id/customizeFragment"
         android:name="com.example.pmaminiprojekt.ui.slideshow.CustomizeFragment"
         android:label="fragment_customize"
-        tools:layout="@layout/fragment_customize" />
+        tools:layout="@layout/fragment_customize" >
+        <action
+            android:id="@+id/action_customizeFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
 </navigation>
