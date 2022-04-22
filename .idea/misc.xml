@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PMA-Miniprojekt--Kn-skaller/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1935" />
+        <entry key="..\:/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/fragment_gallery.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/rasmu/AndroidStudioProjects/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/fragment_gallery.xml" value="0.33" />
-        <entry key="..\:/Users/rasmu/AndroidStudioProjects/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/fragment_slideshow.xml" value="0.33" />
-        <entry key="..\:/Users/rasmu/AndroidStudioProjects/PMA-Miniprojekt--Kn-skaller/app/src/main/res/layout/simple_spinner_dropdown_item2.xml" value="0.17831813576494426" />
       </map>
     </option>
   </component>
