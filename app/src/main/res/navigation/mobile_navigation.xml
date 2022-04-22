@@ -25,6 +25,10 @@
         <action
             android:id="@+id/action_nav_slideshow_to_customizeFragment"
             app:destination="@id/customizeFragment" />
+        <argument
+            android:name="customPresetSizeArg"
+            app:argType="integer"
+            android:defaultValue="3" />
     </fragment>
     <fragment
         android:id="@+id/customizeFragment"
@@ -34,5 +38,9 @@
         <action
             android:id="@+id/action_customizeFragment_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
+        <argument
+            android:name="wheelSizeArg"
+            app:argType="integer"
+            android:defaultValue="3" />
     </fragment>
 </navigation>

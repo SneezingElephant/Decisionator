@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,7 @@ import com.example.pmaminiprojekt.R;
 public class CustomizeFragment extends Fragment {
 
     String wheelInput1, wheelInput2, wheelInput3, wheelInput4, wheelInput5, wheelInput6;
-    int wheelSize;
+    public int wheelSize;
 
     SeekBar seekBar;
     TextView seekBarNr;
@@ -42,6 +43,16 @@ public class CustomizeFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.createWheelButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomizeFragmentDirections.ActionCustomizeFragmentToNavSlideshow action = CustomizeFragmentDirections.actionCustomizeFragmentToNavSlideshow();
+                action.setCustomPresetSizeArg(wheelSize);
+                NavHostFragment.findNavController(CustomizeFragment.this).navigate(action);
+                NavHostFragment.findNavController(CustomizeFragment.this).navigate(R.id.action_customizeFragment_to_nav_slideshow);
+            }
+        });
 
         seekBarNr = (TextView) getActivity().findViewById(R.id.textWheelSizeNr);
         seekBar = (SeekBar) getActivity().findViewById(R.id.seekBar);

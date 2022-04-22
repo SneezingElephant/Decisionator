@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.pmaminiprojekt.R;
 import com.example.pmaminiprojekt.databinding.FragmentSlideshowBinding;
@@ -42,6 +42,8 @@ public class SlideshowFragment extends Fragment {
     private boolean isTakeaway = true;
     private boolean isActivity = false;
     private boolean isGift = false;
+
+    private int customPresetSize = 3;
 
     private ImageView wheel;
     private ImageView wheelActivitys;
@@ -68,6 +70,11 @@ public class SlideshowFragment extends Fragment {
         getDegreeForSectors();
         getDegreeForActivitys();
         getDegreeForGifts();
+
+        if (getArguments() != null) {
+            SlideshowFragmentArgs args = SlideshowFragmentArgs.fromBundle(getArguments());
+            customPresetSize = args.getCustomPresetSizeArg();
+        }
 
         binding.spinBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -137,7 +144,7 @@ public class SlideshowFragment extends Fragment {
     }
 
     public void openCustomizationFragment() {
-
+        NavHostFragment.findNavController(SlideshowFragment.this).navigate(R.id.action_nav_slideshow_to_customizeFragment);
     }
 
     @Override
