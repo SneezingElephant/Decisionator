@@ -48,6 +48,10 @@ public class SlideshowFragment extends Fragment {
     private ImageView wheel;
     private ImageView wheelActivitys;
     private ImageView wheelGifts;
+    private ImageView wheelCustom3;
+    private ImageView wheelCustom4;
+    private ImageView wheelCustom5;
+    private ImageView wheelCustom6;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,14 +70,20 @@ public class SlideshowFragment extends Fragment {
         wheel = (ImageView) getView().findViewById(R.id.wheel);
         wheelActivitys = (ImageView) getView().findViewById(R.id.wheelActivity);
         wheelGifts = (ImageView) getView().findViewById(R.id.wheelGifts);
+        wheelCustom3 = (ImageView) getView().findViewById(R.id.wheelCustom3);
+        wheelCustom4 = (ImageView) getView().findViewById(R.id.wheelCustom4);
+        wheelCustom5 = (ImageView) getView().findViewById(R.id.wheelCustom5);
+        wheelCustom6 = (ImageView) getView().findViewById(R.id.wheelCustom6);
 
         getDegreeForSectors();
         getDegreeForActivitys();
         getDegreeForGifts();
 
         if (getArguments() != null) {
-            SlideshowFragmentArgs args = SlideshowFragmentArgs.fromBundle(getArguments());
-            customPresetSize = args.getCustomPresetSizeArg();
+            customPresetSize = SlideshowFragmentArgs.fromBundle(getArguments()).getCustomPresetSizeArg();
+            String sizeText = "Wheel size = " + customPresetSize;
+            TextView customSizeView = view.getRootView().findViewById(R.id.textCustom);
+            customSizeView.setText(sizeText);
         }
 
         binding.spinBtn.setOnClickListener(new View.OnClickListener() {
@@ -103,8 +113,13 @@ public class SlideshowFragment extends Fragment {
                     isGift = false;
 
                     wheel.setAlpha(1f);
+
                     wheelActivitys.setAlpha(0f);
                     wheelGifts.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
 
                 }
             }
@@ -119,6 +134,11 @@ public class SlideshowFragment extends Fragment {
                     isGift = false;
 
                     wheel.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+
                     wheelActivitys.setVisibility(View.VISIBLE);
                     wheelActivitys.setAlpha(1f);
                     wheelGifts.setAlpha(0f);
@@ -136,8 +156,56 @@ public class SlideshowFragment extends Fragment {
 
                     wheel.setAlpha(0f);
                     wheelActivitys.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+
                     wheelGifts.setVisibility(View.VISIBLE);
                     wheelGifts.setAlpha(1f);
+                }
+            }
+        });
+
+        binding.customPreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!isSpinning && 3 <= customPresetSize && customPresetSize <= 6);
+                isGift = false;
+                isActivity = false;
+                isTakeaway = false;
+
+                wheel.setAlpha(0f);
+                wheelActivitys.setAlpha(0f);
+                wheelGifts.setAlpha(0f);
+
+                if (customPresetSize == 3) {
+                    wheelCustom3.setVisibility(View.VISIBLE);
+                    wheelCustom3.setAlpha(1f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+                }
+                else if (customPresetSize == 4) {
+                    wheelCustom4.setVisibility(View.VISIBLE);
+                    wheelCustom4.setAlpha(1f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+                }
+                else if (customPresetSize == 5) {
+                    wheelCustom5.setVisibility(View.VISIBLE);
+                    wheelCustom5.setAlpha(1f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+                }
+                else if (customPresetSize == 6) {
+                    wheelCustom6.setVisibility(View.VISIBLE);
+                    wheelCustom6.setAlpha(1f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
                 }
             }
         });

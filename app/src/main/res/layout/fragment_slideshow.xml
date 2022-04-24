@@ -65,6 +65,50 @@
             android:visibility="gone" />
 
         <ImageView
+            android:id="@+id/wheelCustom3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel3"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wheelCustom4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel4"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wheelCustom5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel5"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wheelCustom6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel6"
+            android:visibility="gone" />
+
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="180dp"
