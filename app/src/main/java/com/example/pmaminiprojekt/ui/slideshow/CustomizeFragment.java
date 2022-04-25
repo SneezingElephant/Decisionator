@@ -19,7 +19,7 @@ import com.example.pmaminiprojekt.R;
 public class CustomizeFragment extends Fragment {
 
     String wheelInput1, wheelInput2, wheelInput3, wheelInput4, wheelInput5, wheelInput6;
-    public int wheelSize;
+    public int wheelSize = 3;
 
     SeekBar seekBar;
     TextView seekBarNr;
@@ -70,7 +70,6 @@ public class CustomizeFragment extends Fragment {
 
             }
         });
-
 
         input1 = (EditText) getActivity().findViewById(R.id.editInput1);
         input2 = (EditText) getActivity().findViewById(R.id.editInput2);
