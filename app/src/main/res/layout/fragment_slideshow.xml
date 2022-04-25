@@ -65,6 +65,50 @@
             android:visibility="gone" />
 
         <ImageView
+            android:id="@+id/wheelCustom3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel3"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wheelCustom4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel4"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wheelCustom5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel5"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wheelCustom6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/spin_wheel6"
+            android:visibility="gone" />
+
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="180dp"
@@ -96,6 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/wheelWithArrow"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp"
         android:fontFamily="sans-serif-black"
         android:text="Takeaway"
         app:layout_constraintBottom_toTopOf="@+id/wheelWithArrow"
@@ -108,6 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/wheelWithArrow"
+        android:layout_marginBottom="50dp"
         android:layout_toEndOf="@+id/takeawayPreset"
         android:fontFamily="sans-serif-black"
         android:text="Activity"
@@ -121,6 +167,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/wheelWithArrow"
+        android:layout_marginBottom="50dp"
         android:layout_toEndOf="@+id/activityPreset"
         android:fontFamily="sans-serif-black"
         android:text="Gift Ideas"
@@ -130,7 +177,20 @@
         app:layout_constraintTop_toBottomOf="@+id/wheelSpinnerTitle" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/customPreset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/wheelWithArrow"
+        android:layout_toEndOf="@+id/activityPreset"
+        android:fontFamily="sans-serif-black"
+        android:text="Custom"
+        app:layout_constraintBottom_toTopOf="@+id/wheelWithArrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityPreset" />
+
+    <Button
+        android:id="@+id/buttonCustomize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/spinBtn"
@@ -141,6 +201,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wheelWithArrow" />
+
+    <TextView
+        android:id="@+id/textCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="customSize"
+        app:layout_constraintBottom_toTopOf="@+id/wheelWithArrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/customPreset"
+        app:layout_constraintTop_toBottomOf="@+id/giftIdeasPreset" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

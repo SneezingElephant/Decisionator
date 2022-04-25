@@ -21,5 +21,26 @@
         android:id="@+id/nav_slideshow"
         android:name="com.example.pmaminiprojekt.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_customizeFragment"
+            app:destination="@id/customizeFragment" />
+        <argument
+            android:name="customPresetSizeArg"
+            app:argType="integer"
+            android:defaultValue="3" />
+    </fragment>
+    <fragment
+        android:id="@+id/customizeFragment"
+        android:name="com.example.pmaminiprojekt.ui.slideshow.CustomizeFragment"
+        android:label="fragment_customize"
+        tools:layout="@layout/fragment_customize" >
+        <action
+            android:id="@+id/action_customizeFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+        <argument
+            android:name="wheelSizeArg"
+            app:argType="integer"
+            android:defaultValue="3" />
+    </fragment>
 </navigation>

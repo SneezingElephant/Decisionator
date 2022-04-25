@@ -11,13 +11,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.pmaminiprojekt.R;
 import com.example.pmaminiprojekt.databinding.FragmentSlideshowBinding;
@@ -42,9 +44,15 @@ public class SlideshowFragment extends Fragment {
     private boolean isActivity = false;
     private boolean isGift = false;
 
+    private int customPresetSize = 3;
+
     private ImageView wheel;
     private ImageView wheelActivitys;
     private ImageView wheelGifts;
+    private ImageView wheelCustom3;
+    private ImageView wheelCustom4;
+    private ImageView wheelCustom5;
+    private ImageView wheelCustom6;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -63,10 +71,21 @@ public class SlideshowFragment extends Fragment {
         wheel = requireView().findViewById(R.id.wheel);
         wheelActivitys = (ImageView) getView().findViewById(R.id.wheelActivity);
         wheelGifts = (ImageView) getView().findViewById(R.id.wheelGifts);
+        wheelCustom3 = (ImageView) getView().findViewById(R.id.wheelCustom3);
+        wheelCustom4 = (ImageView) getView().findViewById(R.id.wheelCustom4);
+        wheelCustom5 = (ImageView) getView().findViewById(R.id.wheelCustom5);
+        wheelCustom6 = (ImageView) getView().findViewById(R.id.wheelCustom6);
 
         getDegreeForSectors();
         getDegreeForActivitys();
         getDegreeForGifts();
+
+        if (getArguments() != null) {
+            customPresetSize = SlideshowFragmentArgs.fromBundle(getArguments()).getCustomPresetSizeArg();
+            String sizeText = "Wheel size = " + customPresetSize;
+            TextView customSizeView = view.getRootView().findViewById(R.id.textCustom);
+            customSizeView.setText(sizeText);
+        }
 
         binding.spinBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -79,6 +98,13 @@ public class SlideshowFragment extends Fragment {
             }
         });
 
+        binding.buttonCustomize.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCustomizationFragment();
+            }
+        });
+
         binding.takeawayPreset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,8 +114,13 @@ public class SlideshowFragment extends Fragment {
                     isGift = false;
 
                     wheel.setAlpha(1f);
+
                     wheelActivitys.setAlpha(0f);
                     wheelGifts.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
 
                 }
             }
@@ -104,6 +135,11 @@ public class SlideshowFragment extends Fragment {
                     isGift = false;
 
                     wheel.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+
                     wheelActivitys.setVisibility(View.VISIBLE);
                     wheelActivitys.setAlpha(1f);
                     wheelGifts.setAlpha(0f);
@@ -121,11 +157,63 @@ public class SlideshowFragment extends Fragment {
 
                     wheel.setAlpha(0f);
                     wheelActivitys.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+
                     wheelGifts.setVisibility(View.VISIBLE);
                     wheelGifts.setAlpha(1f);
                 }
             }
         });
+
+        binding.customPreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!isSpinning && 3 <= customPresetSize && customPresetSize <= 6);
+                isGift = false;
+                isActivity = false;
+                isTakeaway = false;
+
+                wheel.setAlpha(0f);
+                wheelActivitys.setAlpha(0f);
+                wheelGifts.setAlpha(0f);
+
+                if (customPresetSize == 3) {
+                    wheelCustom3.setVisibility(View.VISIBLE);
+                    wheelCustom3.setAlpha(1f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+                }
+                else if (customPresetSize == 4) {
+                    wheelCustom4.setVisibility(View.VISIBLE);
+                    wheelCustom4.setAlpha(1f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+                }
+                else if (customPresetSize == 5) {
+                    wheelCustom5.setVisibility(View.VISIBLE);
+                    wheelCustom5.setAlpha(1f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                    wheelCustom6.setAlpha(0f);
+                }
+                else if (customPresetSize == 6) {
+                    wheelCustom6.setVisibility(View.VISIBLE);
+                    wheelCustom6.setAlpha(1f);
+                    wheelCustom4.setAlpha(0f);
+                    wheelCustom5.setAlpha(0f);
+                    wheelCustom3.setAlpha(0f);
+                }
+            }
+        });
+    }
+
+    public void openCustomizationFragment() {
+        NavHostFragment.findNavController(SlideshowFragment.this).navigate(R.id.action_nav_slideshow_to_customizeFragment);
     }
 
     @Override
