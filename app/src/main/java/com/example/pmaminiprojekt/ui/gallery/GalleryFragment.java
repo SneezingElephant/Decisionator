@@ -109,7 +109,7 @@ public class GalleryFragment extends Fragment {
     private void flipCoin(){
 
 
-
+        //This makes the coin rotate very very fast
         Animation rotateLeft = new RotateAnimation(4320, 0, 328, 322);
         rotateLeft.setInterpolator(new AccelerateInterpolator());
         rotateLeft.setDuration(1000);
