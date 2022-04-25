@@ -43,6 +43,8 @@ public class SlideshowFragment extends Fragment {
     private boolean isActivity = false;
     private boolean isGift = false;
 
+    private CustomizeFragment customizeFragment;
+
     private int customPresetSize = 3;
 
     private ImageView wheel;
@@ -74,6 +76,15 @@ public class SlideshowFragment extends Fragment {
         wheelCustom4 = (ImageView) getView().findViewById(R.id.wheelCustom4);
         wheelCustom5 = (ImageView) getView().findViewById(R.id.wheelCustom5);
         wheelCustom6 = (ImageView) getView().findViewById(R.id.wheelCustom6);
+
+        /*
+        String inputText1 = customizeFragment.getWheelInput1();
+        String inputText2 = customizeFragment.getWheelInput2();
+        String inputText3 = customizeFragment.getWheelInput3();
+        String inputText4 = customizeFragment.getWheelInput4();
+        String inputText5 = customizeFragment.getWheelInput5();
+        String inputText6 = customizeFragment.getWheelInput6();
+         */
 
         getDegreeForSectors();
         getDegreeForActivitys();
