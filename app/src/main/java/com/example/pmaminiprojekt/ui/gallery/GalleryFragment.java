@@ -122,24 +122,21 @@ public class GalleryFragment extends Fragment {
                 rotateRight.setInterpolator(new DecelerateInterpolator());
                 rotateRight.setDuration(3000);
                 rotateRight.setFillAfter(true);
-
+                randomSide = new Random();
 
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-
-
-                int side = randomSide.nextInt(2);
-                if (side == 1)
-                {
-                    coin.setImageResource(R.drawable.coin_heads);
-
-                }
-                else
-                {
-                    coin.setImageResource(R.drawable.coin_tails);
-                }
+               int side = randomSide.nextInt(2);
+               if (side == 1)
+               {
+               coin.setImageResource(R.drawable.coin_heads);
+               }
+               else
+               {
+                   coin.setImageResource(R.drawable.coin_tails);
+               }
             }
 
             @Override
