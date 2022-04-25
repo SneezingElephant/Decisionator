@@ -24,6 +24,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.pmaminiprojekt.R;
 import com.example.pmaminiprojekt.databinding.FragmentSlideshowBinding;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class SlideshowFragment extends Fragment {
@@ -69,7 +70,7 @@ public class SlideshowFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        wheel = (ImageView) getView().findViewById(R.id.wheel);
+        wheel = requireView().findViewById(R.id.wheel);
         wheelActivitys = (ImageView) getView().findViewById(R.id.wheelActivity);
         wheelGifts = (ImageView) getView().findViewById(R.id.wheelGifts);
         wheelCustom3 = (ImageView) getView().findViewById(R.id.wheelCustom3);
