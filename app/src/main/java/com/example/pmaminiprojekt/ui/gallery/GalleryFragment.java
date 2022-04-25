@@ -43,7 +43,7 @@ public class GalleryFragment extends Fragment {
 
     private static final Random RANDOM = new Random();
     private ImageView coin;
-
+    private Random randomSide;
 
     private FragmentGalleryBinding binding;
 
@@ -128,7 +128,18 @@ public class GalleryFragment extends Fragment {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                coin.setImageResource(RANDOM.nextFloat() > 0.5f ? R.drawable.coin_heads : R.drawable.coin_tails);
+
+
+                int side = randomSide.nextInt(2);
+                if (side == 1)
+                {
+                    coin.setImageResource(R.drawable.coin_heads);
+
+                }
+                else
+                {
+                    coin.setImageResource(R.drawable.coin_tails);
+                }
             }
 
             @Override
