@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.pmaminiprojekt.MainActivity;
 import com.example.pmaminiprojekt.R;
 import com.example.pmaminiprojekt.databinding.FragmentSlideshowBinding;
 
@@ -44,7 +45,7 @@ public class SlideshowFragment extends Fragment {
     private boolean isActivity = false;
     private boolean isGift = false;
 
-    private CustomizeFragment customizeFragment;
+    private MainActivity mainActivity;
 
     private int customPresetSize = 3;
 
@@ -79,12 +80,13 @@ public class SlideshowFragment extends Fragment {
         wheelCustom6 = (ImageView) getView().findViewById(R.id.wheelCustom6);
 
         /*
-        String inputText1 = customizeFragment.getWheelInput1();
-        String inputText2 = customizeFragment.getWheelInput2();
-        String inputText3 = customizeFragment.getWheelInput3();
-        String inputText4 = customizeFragment.getWheelInput4();
-        String inputText5 = customizeFragment.getWheelInput5();
-        String inputText6 = customizeFragment.getWheelInput6();
+        String inputText1 = mainActivity.getWheelInput1();
+        String inputText2 = mainActivity.getWheelInput2();
+        String inputText3 = mainActivity.getWheelInput3();
+        String inputText4 = mainActivity.getWheelInput4();
+        String inputText5 = mainActivity.getWheelInput5();
+        String inputText6 = mainActivity.getWheelInput6();
+
          */
 
         getDegreeForSectors();

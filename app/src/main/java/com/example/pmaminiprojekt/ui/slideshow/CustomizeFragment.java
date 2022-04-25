@@ -14,12 +14,14 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.pmaminiprojekt.MainActivity;
 import com.example.pmaminiprojekt.R;
 
 public class CustomizeFragment extends Fragment {
 
-    private String wheelInput1, wheelInput2, wheelInput3, wheelInput4, wheelInput5, wheelInput6;
     public int wheelSize = 3;
+
+    private MainActivity mainActivity;
 
     SeekBar seekBar;
     TextView seekBarNr;
@@ -71,47 +73,30 @@ public class CustomizeFragment extends Fragment {
             }
         });
 
+        /*
         input1 = (EditText) getActivity().findViewById(R.id.editInput1);
-        wheelInput1 = input1.getText().toString();
+        mainActivity.setWheelInput1(input1.getText().toString());
 
         input2 = (EditText) getActivity().findViewById(R.id.editInput2);
-        wheelInput2 = input2.getText().toString();
+        mainActivity.setWheelInput2(input2.getText().toString());
 
         input3 = (EditText) getActivity().findViewById(R.id.editInput3);
-        wheelInput3 = input3.getText().toString();
+        mainActivity.setWheelInput3(input3.getText().toString());
 
         input4 = (EditText) getActivity().findViewById(R.id.editInput4);
-        wheelInput4 = input4.getText().toString();
+        mainActivity.setWheelInput4(input4.getText().toString());
 
         input5 = (EditText) getActivity().findViewById(R.id.editInput5);
-        wheelInput5 = input5.getText().toString();
+        mainActivity.setWheelInput5(input6.getText().toString());
 
         input6 = (EditText) getActivity().findViewById(R.id.editInput6);
-        wheelInput6 = input6.getText().toString();
+        mainActivity.setWheelInput6(input6.getText().toString());
+
+         */
+
+
+
 
     }
 
-    public String getWheelInput1() {
-        return wheelInput1;
-    }
-
-    public String getWheelInput2() {
-        return wheelInput2;
-    }
-
-    public String getWheelInput3() {
-        return wheelInput3;
-    }
-
-    public String getWheelInput4() {
-        return wheelInput4;
-    }
-
-    public String getWheelInput5() {
-        return wheelInput5;
-    }
-
-    public String getWheelInput6() {
-        return wheelInput6;
-    }
 }
