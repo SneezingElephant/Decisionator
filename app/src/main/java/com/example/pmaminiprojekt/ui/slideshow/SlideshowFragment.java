@@ -32,10 +32,10 @@ public class SlideshowFragment extends Fragment {
 
     private FragmentSlideshowBinding binding;
 
-    private static final String [] sectors ={"Burger", "Kebab", "Chinese", "Pizza"};
+    private static final String [] takeaway ={"Burger", "Kebab", "Chinese", "Pizza"};
     private static final String [] activitys ={"Exercise", "Movie", "Clean Up", "Find Friends", "Video Games"};
     private static final String [] gifts ={"Flowers", "Chocolate", "Gift Card", "Book", "Clothes", "Game"};
-    private static final int [] sectorDegrees = new int[sectors.length];
+    private static final int [] takeawayDegrees = new int[takeaway.length];
     private static final int [] activitysDegrees = new int[activitys.length];
     private static final int [] giftsDegrees = new int[gifts.length];
     private static final Random random = new Random();
@@ -89,7 +89,7 @@ public class SlideshowFragment extends Fragment {
 
          */
 
-        getDegreeForSectors();
+        getDegreeForTakeaway();
         getDegreeForActivitys();
         getDegreeForGifts();
 
@@ -238,10 +238,10 @@ public class SlideshowFragment extends Fragment {
     private void spin()
     {
         if (isTakeaway) {
-            degree = random.nextInt(sectors.length - 1);
+            degree = random.nextInt(takeaway.length - 1);
 
             RotateAnimation rotateAnimation = new RotateAnimation(0,
-                    (360 * sectors.length) + sectorDegrees[degree],
+                    (360 * takeaway.length) + takeawayDegrees[degree],
                     RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 
             rotateAnimation.setDuration(3600);
@@ -328,13 +328,13 @@ public class SlideshowFragment extends Fragment {
     }
 
 
-    private void getDegreeForSectors()
+    private void getDegreeForTakeaway()
     {
-        int sectorDegree = 360/sectors.length;
+        int sectorDegree = 360/takeaway.length;
 
-        for (int i=0; i < sectors.length; i++)
+        for (int i=0; i < takeaway.length; i++)
         {
-            sectorDegrees[i] = (i+1) * sectorDegree;
+            takeawayDegrees[i] = (i+1) * sectorDegree;
         }
     }
 
