@@ -22,7 +22,7 @@
     <string name="coin_flip">Coin Flip</string>
     <string name="spin_wheel">Spin Wheel</string>
     <string name="wheel_spinner">Wheel Spinner</string>
-    <string name="coin_flip">Coin Flip</string>
+    <string name="coin_flip2">Coin Flip</string>
 
     <string-array name="wheelPresets">
         <item>Preset1</item>
