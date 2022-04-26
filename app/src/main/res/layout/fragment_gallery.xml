@@ -4,32 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+
     tools:context=".ui.gallery.GalleryFragment">
+
+    <TextView
+        android:id="@+id/coinFlipperTitle"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Coin Flipper"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/flipButton"
-        android:layout_width="166dp"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
         android:text="@string/flip_the_coin"
         android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintTop_toBottomOf="@+id/coiniestCoin" />
 
     <ImageView
         android:id="@+id/coiniestCoin"
-        android:layout_width="155dp"
-        android:layout_height="156dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="50dp"
         android:contentDescription="@string/coinContentDescription"
         android:src="@drawable/coin_heads"
-        app:layout_constraintBottom_toTopOf="@+id/flipButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598"
         tools:ignore="ImageContrastCheck" />
 
     <Button
@@ -42,28 +61,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coiniestCoin" />
-
-    <TextView
-        android:id="@+id/presetText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/presets"
-        app:layout_constraintBottom_toTopOf="@+id/coiniestCoin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
-
-    <Spinner
-        android:id="@+id/presetDropdown"
-        android:layout_width="218dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/coiniestCoin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/presetText"
-        app:layout_constraintVertical_bias="0.197"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

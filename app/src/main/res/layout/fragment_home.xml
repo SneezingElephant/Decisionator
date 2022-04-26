@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+
     tools:context=".ui.home.HomeFragment">
 
 
@@ -25,12 +27,14 @@
 
     <TextView
         android:id="@+id/DecMake"
-        android:layout_width="316dp"
-        android:layout_height="22dp"
-        android:fontFamily="sans-serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/how_would_you_like_to_make_your_decision"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -72,6 +76,8 @@
         android:text="@string/coin_flip"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CoinFlipButton"
@@ -83,7 +89,9 @@
         android:layout_height="26dp"
         android:text="@string/wheel_spinner"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.66"
