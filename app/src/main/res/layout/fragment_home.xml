@@ -6,17 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/appWelcome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/DecMake"
+        android:layout_width="316dp"
+        android:layout_height="22dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/how_would_you_like_to_make_your_decision"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appWelcome"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <ImageButton
+        android:id="@+id/CoinFlipButton"
+        android:layout_width="151dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/coin_heads"
+        android:text="@string/coin_flip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DecMake"
+        app:layout_constraintVertical_bias="0.308"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/WheelSpinButton"
+        android:layout_width="153dp"
+        android:layout_height="146dp"
+        android:background="@drawable/spin_wheel5"
+        android:text="@string/spin_wheel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CoinFlipButton"
+        app:layout_constraintTop_toBottomOf="@+id/DecMake"
+        app:layout_constraintVertical_bias="0.306"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/CoinFlipText"
+        android:layout_width="93dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="64dp"
+        android:text="@string/coin_flip"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/CoinFlipButton"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/WheelSpinText"
+        android:layout_width="154dp"
+        android:layout_height="26dp"
+        android:text="@string/wheel_spinner"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintStart_toEndOf="@+id/CoinFlipText"
+        app:layout_constraintTop_toBottomOf="@+id/WheelSpinButton"
+        app:layout_constraintVertical_bias="0.043" />
 </androidx.constraintlayout.widget.ConstraintLayout>

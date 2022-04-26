@@ -240,7 +240,8 @@ public class SlideshowFragment extends Fragment {
         if (isTakeaway) {
             degree = random.nextInt(sectors.length - 1);
 
-            RotateAnimation rotateAnimation = new RotateAnimation(0, (360 * sectors.length) + sectorDegrees[degree],
+            RotateAnimation rotateAnimation = new RotateAnimation(0,
+                    (360 * sectors.length) + sectorDegrees[degree],
                     RotateAnimation.RELATIVE_TO_SELF, 0.5f, RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 
             rotateAnimation.setDuration(3600);
